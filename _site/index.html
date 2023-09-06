@@ -7,52 +7,84 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #f4f4f4;
+            padding: 20px;
         }
 
-        h1 {
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 10px auto;
+            display: block;
+        }
+
+        .header h1 {
+            margin: 0;
             color: #333;
-            text-decoration: underline;
         }
 
-        h2 {
-            color: #444;
+        .header p {
+            margin-top: 5px;
+            font-weight: bold;
+            color: #555;
         }
 
-        p {
-            margin-bottom: 10px;
+        .section {
+            margin-top: 20px;
         }
 
-        ul {
-            list-style-type: disc;
+        .section h2 {
+            color: #333;
+        }
+
+        .section ul {
+            list-style-type: square;
             margin-left: 20px;
+            padding: 0;
+        }
+
+        .section li {
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>B.V.S.Bhuvan</h1>
-    <p>B.Tech 3rd Year Student</p>
-    <p>Woxsen University, Hyderabad</p>
-    <p>Email: Bhuvan_2025@woxsen.edu.in</p>
+    <div class="container">
+        <div class="header">
+            <a href="https://ibb.co/hHR9kgg"><img src="https://i.ibb.co/sQvRhgg/8L0A4274.jpg" alt="your photo" border="0"></a>
+            <h1>B.V.S.Bhuvan</h1>
+            <p>B.Tech 3rd Year Student</p>
+            <p>Woxsen University, Hyderabad</p>
+            <p>Email: Bhuvan_2025@woxsen.edu.in</p>
+        </div>
+        
+        <div class="section">
+            <h2>Skills:</h2>
+            <ul>
+                <li>React.js</li>
+                <li>Angular</li>
+                <li>Ionic</li>
+                <li>Apache Cordova</li>
+                <!-- Add more skills here -->
+            </ul>
+        </div>
 
-    <h2>Skills:</h2>
-    <ul>
-        <li>React.js</li>
-        <li>Angular</li>
-        <li>Ionic</li>
-        <li>Apache Cordova</li>
-        <!-- Add more skills here -->
-    </ul>
+        <!-- Add more sections for education, experience, projects, etc. -->
 
-    <h2>Education:</h2>
-    <p><strong>Woxsen University, Hyderabad</strong></p>
-    <p>Bachelor of Technology (B.Tech)</p>
-    <p>Currently in 3rd Year</p>
-
-    <h2>Contact:</h2>
-    <p>Email: Bhuvan_2025@woxsen.edu.in</p>
-    <!-- Add more contact information if needed -->
-
-    <!-- Add sections for experience, projects, certifications, and other relevant details -->
+    </div>
 </body>
 </html>
