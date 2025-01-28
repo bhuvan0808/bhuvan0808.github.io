@@ -1,275 +1,208 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
 <head>
-	<title>myresume</title>
-	<link rel="stylesheet" type="text/css" href="/css/main.css">
-	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin|Source+Serif+Pro" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhuvan Boddu - AI Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #2c3e50;
+            --primary: #3498db;
+            --secondary: #ecf0f1;
+            --accent: #e74c3c;
+        }
+
+        [data-theme="dark"] {
+            --bg: #2c3e50;
+            --text: #ecf0f1;
+            --primary: #1abc9c;
+            --secondary: #34495e;
+            --accent: #e67e22;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .theme-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: var(--primary);
+            color: white;
+            z-index: 1000;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .card {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skills-radar {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .holographic-effect {
+            background: linear-gradient(45deg, #00ff87, #60efff, #0061ff);
+            background-size: 200% 200%;
+            animation: gradient 5s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div id="pic1"><img id = "profile" src ="images/sree_pic3.jpg"></div>
-    <div id= "name"><h1>BODDU VENKATA SAI BHUVAN</h1></div>   
-     <div id = "info">
-    	<ul>
-    		<li class = "group"><i id = "mail-icon" class="fas fa-envelope-square"></i>
-    	    <a class = "group" style = "color:black" href="mailto:bhuvanboddu08@gmail.com">bhuvanbodddu08@gmail.com</a> </li>
-    	    <li class = "group"><i id = "phone-icon" class="fas fa-phone-square"></i> +91 7670841357</li>
-    	    <li class = "group"><i class="fab fa-linkedin-in"></i> <a class = "group" style = "color:black;"href = "https://www.linkedin.com/in/bhuvan-boddu-756a22220/" target="_blank">Bhuvan</a></li>
-    	    <li class = "group"><i class="fab fa-github-square"></i><a class = "group" style = "color:black;"href = "https://github.com/bhuvan0808" target="_blank">Bhuvan-Github</a></li>
-    	    
-    	</ul>    
-    </div> 
-  </header>
-  
-  <div class= "main">
-      <div class = "sidebar">
-      	<a href = "#section1" style = "color: black;"><h2 class = "headings">Profile Summary</h2></a>
-      	<a href = "#section2" style = "color:black;"><h2 class = "headings">Skill Set</h2></a>
-        <a href = "#section3" style = "color: black;"><h2 class = "headings">Education & Qualifications</h2></a>
-        
-        <a href = "#section4" style = "color: black;"><h2 class = "headings">Work Experience</h2></a>
-        <a href = "#section4" ><img class= "logo" src = "images/Thermo.jpg" alt = "thermo"></a>
-        <a href = "#ge" ><img class= "logo" src = "images/ge.png" alt = "ge_healthcare"></a>
-        <a href = "#waters" ><img class= "logo" src = "images/waters.PNG" alt = "waters"></a>
-        <a href = "#section5" ><img class= "logo" src = "images/varian.png" alt = "varian"></a>
-        <a href = "#section5" style = "color: black;"><h2 class = "headings">Previous Jobs</h2></a>
-        <a href = "#section6" style = "color: black;"><h2 class = "headings">Specialized Trainings</h2></a>
-		<a href = "#certification" style = "color: black;"><h2 class = "headings">Certifications</h2></a>
-		<a href = "#section8" style = "color: black;"><h2 class = "headings">Personal Details</h2></a>
-        <a href = "#section9" style = "color: black;"><h2 class = "headings">Hobbies</h2></a>
+    <canvas class="particles"></canvas>
+    <button class="theme-btn" onclick="toggleTheme()">🌓</button>
 
-  </div>
-      <div class ="content">
-      	<div>
-      	   
-      	   <ul  id = "section1"class = "summary">
+    <section class="hero holographic-effect">
+        <h1 class="floating">Venkata Sai Bhuvan Boddu</h1>
+        <p>AI Engineer & Cloud Specialist</p>
+        <div class="contact-bubble">
+            <p>📧 bhuvanboddu08@gmail.com</p>
+            <p>📱 +91 7670841357</p>
+        </div>
+    </section>
 
-
-      		<li> <strong>30 Years Experience in </strong></li>
-      			<ul>
-      		      <li>After-Sales Service Delivery - Installations, Breakdown Service, PMs,Validation etc </li>
-      		      <li>Service Business</li>
-      		      <li>Technical Teams Management</li>
-      		      <li>Service Administration</li>
-      		      <li>Customer Trainings </li>
-      		    </ul>
-      	    <br> 
-      	    <li> Good Knwoledge on Analytical Instrumentation techniques like <em>AAS, GC, UV-VIS, FTIR, ICP, ICP-MS, GC-MS, LC-MS, HPLC, IR-MS.</em></li>   
-      	    <li> Proficient in leading teams for running successful target oriented service operations.</li> 
-      	    <li> Experieced in Service Sales, Enterprise Services </li>
-      	    <li> Specialized in Software Demonstrations and user trainings for sophisticated scientific products.</li>
-      	    <li> Pharma, Bioanalytical domain Expertise</li>
-      	  </ul>
-
-
-
-      	</div>
-      	<div>
-      	   <ul  id = "section2"class = "summary">
-
-
-      		<li> <strong>Analytical Instruments Specilization</strong></li>
-      			<ul>
-      		      <li>Mass Spectrometry</li>
-      		      <li>Techsupport Team lead</li>
-      		      <li>Trained on Various Analytical instruments</li>
-      		      <li>First level User application Support</li>
-      		      <li>Electronics Troubleshooting</li>
-      		 
-      		    </ul>
-      	    <br> 
-      	   </ul>
-
-
-
-
-      	   <ul  class = "summary">
-
-
-      		<li> <strong>Skills and Interests</strong></li>
-      			<ul>
-      		      <li>Python (Practising regulary - Online Code challenge sites)</li>
-      		      <li>Data Analytics(Practicing Regularly on Kaggle.com)</li>
-      		      <li>MySQL,Jupyter Note Books, R-Language, HTML</li>
-      		      <li>Business Intelegence Reporting tools</li>
-      		      <li>SAP BOE Reporting</li>
-      		      <li>SFDC, Power BI, Plotly, Seaborn, KNIME</li>
-      		    </ul>
-      	    <br>
-      	   </ul>
-      	    <ul  id = "section3"class = "summary">
-      		    <li> <strong>Education and Qualifications</strong></li>
-      			<ul>
-      		      <li>Special Diploma in Electronics Engineering (S.D.E) – 1985 – 73% Specialization Electronics Equipment Testing from Govt Institute of Electronics Hyderabad.</li>
-      		      <li>Bachelors Degree in Computer Applications (B.C.A) from Alagappa University Distance mode – 2011</li>
-      		      <li>Post Graduate Diploma in Business Management (Operations Management) Symbiosis Centre for Distance
-					Learning – Pune – 2013 – A Grade.</li>
-       		    </ul> 
-      	    
-      	  </ul>
-      	  <br>
-      	  <br>
-      	  <ul  id = "section4"class = "summary">
-      		    <li> <strong>Work Experience</strong></li>
-      		    <br>
-      		    
-      		    <li class = "companyname"> <strong>Thermo Fisher Scientific India Pvt Ltd.</strong></li>
-      		    <ul>
-      		        <li><strong>Head - Service Sales ---- May’ 2014 – Present</strong></li></li>    
-      			</ul>
-
-      			<ul>
-      		      <li>Service Sales Function Started by me and gradually expanding.</li>
-      		      <li>Currently managing a team of 6 Service Sales Professionals with Annual Operating Plan of 13M$ </li>
-      		      <li>Drive the organization towards operational excellence for Service Sales. (Unified policies, common best practices and processes etc)</li>
-      		      <li>Enterprise Services, Multivendor Service Support Management. Thermo Fisher</li>
-      		      <li>Year on Year average growth of 20% OG</li>
-      		    </ul>  
-
-         </ul> 
-         <ul  id = "section4"class = "summary">
-      		          		    
-      		    <li class = "companyname"> <strong>Thermo Fisher Scientific India Pvt Ltd.</strong></li>
-      		    <ul>
-      		        <li><strong>Regional Customer Care Manager ---- May’2008 – Jan’2013.(5 Yrs , 10 Months)</strong></li></li>    
-      			</ul>
-
-      			<ul>
-      		      <li>Regional Service Management for South for Service Delivery, Service Business Scientific Instruments Division.</li>
-      		      <li>Leading Team of 5 Service Experts – covering install base of 650 Scientific Instruments</li>
-      		      <li>Bio Analytical Technical resource for BA/BE Laboratories Mass Spec Product Line.</li>
-      		      <li>Service Specialist Support for Advanced Instruments like Isotope Ratio Mass spectrometers, Orbitrap LC Mass Spectrometers. Easy nLC nano LC.</li>
-      		      <li>Post sale, application support, user trainings on the instrument specialized software packages.</li>
+    <div class="timeline">
+        <!-- Experience Section -->
+        <div class="card">
+            <h2>🚀 Experience</h2>
+            <div class="timeline-item">
+                <h3>Centific | Associate Application Engineer</h3>
+                <p>AI Data Foundry | Oct 2024 - Present</p>
+                <ul>
+                    <li>AIOps Development</li>
+                    <li>Azure Cloud Infrastructure</li>
                 </ul>
-       </ul>
-        <ul  id = "waters"class = "summary">
-      		          		    
-      		    <li class = "companyname"> <strong>WATERS (India) Pvt Ltd.</strong></li>
-      		    <ul>
-      		        <li><strong>Regional Service Manager -- Jul’2005 – Aug’2007 (2 Yrs 10Months)</strong></li></li>    
-      			</ul>
+            </div>
+            <!-- Add other experiences similarly -->
+        </div>
 
-      			<ul>
-      		      <li>HPLC, Chromatography Data Systems (Empower 1 & 2) Networks, Mass spectrometers (LCMS, GC/MS/MS, Magnetic sector Mass spec, TOF etc). Informatics.</li>
-      		      <li>Managed a team of 8 HPLC Engineers, 1 MS Specialist, 1 Networks Specialist, 1 Application Chemist, Service- coordinator.</li>
-      		      <li>Regional responsibility of Service Delivery Installations, Customer Training, Maintenance, Service Business.</li>
-      		      <li>High Resolution Magnetic Sector GCMS, Triple Quad Service Speciliation</li>
-      		    </ul>  
+        <!-- Education Section -->
+        <div class="card">
+            <h2>🎓 Education</h2>
+            <div class="timeline-item">
+                <h3>Woxsen University</h3>
+                <p>B.Tech AI & Data Science</p>
+                <p>2021-2025</p>
+            </div>
+        </div>
+    </div>
 
-        </ul>
-        <ul  id = "ge"class = "summary">
-      		          		    
-      		    <li class = "companyname"> <strong>GE Healthcare Biosciences.</strong></li>
-      		    <ul>
-      		        <li><strong>Regional Service Manager-- Apr’2002 – Jun’2005 (3 Yrs – 2Months)</strong></li></li>    
-      			</ul>
+    <!-- Skills Radar Chart -->
+    <div class="skills-radar">
+        <canvas id="skillsChart"></canvas>
+    </div>
 
-      			<ul>
-      		      <li>Facilitated Key account care for Biotech customers like DRL, Shantha- Biotech, CCMB, CDFD and HCU.</li>
-      		      <li>Pre sales support for big projects in the area of Proteomics and Industrial separations.</li>
-      		      <li>Regional responsibility of Service Delivery Installations, Customer Training, Maintenance, Service Business.</li>
-      		      <li>Identified as Service specialist for Maldi-ToF, LC-MS instruments.</li>
-      		    </ul>  
+    <!-- Interactive Project Gallery -->
+    <div class="project-gallery">
+        <!-- Project cards with hover effects -->
+    </div>
 
-        </ul>  
-        <ul  id = "section5"class = "summary">
-      		          		    
-      		    <li class = "companyname"> <strong>Previous Jobs</strong></li>
-      		    <ul>
-      		        <li>VARIAN INDIA PVT LTD., Service Specialist ----Nov’96 – Apr’02 (5 Years 7 Months)</li> 
-      			</ul>
-      			<ul>
-      		        <li>ALGHAWAS SCIENTIFIC ENTERPRISES ABUDHABI, UAE , Resident Service Engineer --Jun’95 – Jun’96 (1Yr)</li> 
-      			</ul>
-      			<ul>
-      		        <li>HINDITRON SERVICES PVT LTD, Area Service Manager--- Apr’89 – Jun’95 (6 years 2Months)</li>    
-      			</ul>
-      			<ul>
-      		        <li>COSMO COMMUNICATIONS PVT LTD., Senior Technical Assistant – Oct’87 – Feb’89(1 Yr 4 Months)</li>    
-      			</ul>
-      			<ul>
-      		        <li>KEONICS MAGNAVISION COMPUTERS PVT LTD., Jan’86 – Jun’87 (1 Year 5 Months) Technical Assistant
-                    </li>
+    <!-- Recommendation Letter Section -->
+    <div class="card" id="recommendation">
+        <h2>🌟 Recommendation Letter</h2>
+        <div class="typewriter">
+            <p>"I write this letter of recommendation for Mr. Venkata Sai Bhuvan Boddu... [full text]"</p>
+        </div>
+    </div>
 
-      			</ul>
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.setAttribute('data-theme', 
+                document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        }
 
-      			
-      		    </ul> 
+        // Particle Animation
+        const canvas = document.querySelector('.particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
+        // Particle system implementation here...
 
+        // Skills Radar Chart
+        const skillsData = {
+            labels: ['AI/ML', 'Cloud', 'Python', 'MERN', 'Terraform', 'LLMs'],
+            datasets: [{
+                label: 'Skill Level',
+                data: [90, 85, 95, 80, 75, 88],
+                backgroundColor: 'rgba(52, 152, 219, 0.5)',
+                borderColor: '#3498db',
+            }]
+        };
 
+        new Chart(document.getElementById('skillsChart'), {
+            type: 'radar',
+            data: skillsData,
+            options: {
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
 
-
-
-
-
-
-
-        </ul>  
-        <ul  id = "section6"class = "summary">
-      		          		    
-      		    <li class = "companyname"> <strong>Specialized Trainings</strong></li>
-      		    <ul>
-      		        <li>Autospec Magnetic sector Dioxin analysis instrument at Waters <strong>Micromass U.K – 3 Weeks</strong></li>    
-      			    <li>QuattroMicro LCMS instrument – Installation, PM Service – 2 Weeks at <strong>Waters India H.Q Bangalore</strong></li> 
-      			    <li>Waters Core products (HPLC modules) – 3 Weeks at <strong>Waters India H.Q, Bangalore.</strong></li>
-      			    <li>Service Training on Akta Series Liquid chromatography systems used in protein purification (R&D and Lab
-					scale) – <strong>Amersham Biosciences Ltd - Malaysia</strong></li>
-					<li>Service Training on Bioprocess series Industrial Chromatography systems used in Production level
-					purification – <strong>Amersham Biosciences Ltd – Sweden.</strong></li>
-					<li>Service, IQ/OQ Training on Akta Pilot (Pilot Scale Production) Liquid Chromatography System - <strong>Amersham Bioscineces Ltd – Singapore.</strong></li>
-					<li>Service Training on Ettan Maldi-TOF Mass spec instrument – <strong>Amersham Biosciences Ltd-
-					 Hong Kong</strong></li>
-					 <li>Service Specialist Training on ICP-AES (15th Feb- 7th Mar 98) at <strong>VARIAN, Melbourne Australia.</strong></li>
-					 <li>Installation, Service Specialist Training on ICP-MS (30th Mar – 18th Apr 98) at <strong>VARIAN Melbourne
-                     Australia.</strong></li>
-                     <li>Installation, Service Specialist Training on VISTA simultaneous ICP-AES (12th Jun- 19th Jun 2000) at <strong>VARIAN Melbourne, Australia.</strong></li>
-                     <li>Service Engineer Training for FT-IR Spectrometers at <strong>NICOLET, Madison, Wisconsin U.S.A.</strong></li>
-                     <li>Service Specialist Training on Isotope Ratio Mass Spectrometers <strong>Thermo Fisher Scientific. BREMEN (Germany)</strong></li>
-                     <li>Service Specialist Training on Orbitrap Mass Spectrometers <strong>Thermo Fisher Scientific BREMEN (Germany).</strong></li>
-                     <li>Installation/Service training on NICOLET iN10/iN10MX IR Microscope.<strong>Thermo Fisher Scientific,Mumbai.</strong></li>
-                     <li>Installation/Service Training on Nano LC<strong>Proxeon Denmak.</strong></li>
-      			</ul>
-       </ul>
-        <ul  id = "certification"class = "summary">
-      		          		    
-      		    <li class = "companyname"> <strong>Certifications</strong></li>
-      		    			 
-        </ul>
-        <!--- Gallery of Certifications etc-->
-		<div class="row">
-  			<div class="column">
-    			<img class = "certs"src="images/rlang_intro.PNG" alt="R-Lanugage">
-  			</div>
-  			<div class="column">
-    			<img class = "certs"src="images/mysql.PNG" alt="MySQL">
-  			</div>
-  			<div class="column">
-    			<img class = "certs" src="images/datascience.PNG" alt="Datascience">
-  			</div>
-		</div>
-		<div class="row">
-  			<div class="column">
-    			<img class = "certs"src="images/excel.PNG" alt="excel">
-  			</div>
-  			<div class="column">
-    			<img class = "certs"src="images/mysql.PNG" alt="MySQL">
-  			</div>
-  			<div class="column">
-    			<img class = "certs" src="images/datascience.PNG" alt="Datascience">
-  			</div>
-		</div>
-		<!--- End of panel placement -->
-      	</div>
-      	
-
-
-
-
-      </div>
-  </div>
+        // Add more interactive features...
+    </script>
 </body>
 </html>
