@@ -5,142 +5,263 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bhuvan Boddu - AI Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
-        /* CSS Styles */
-        /* Remain unchanged */
+        :root {
+            --bg: #ffffff;
+            --text: #2c3e50;
+            --primary: #3498db;
+            --secondary: #ecf0f1;
+            --accent: #e74c3c;
+            --card-bg: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --bg: #1a1a1a;
+            --text: #f5f6fa;
+            --primary: #1abc9c;
+            --secondary: #2d3436;
+            --accent: #e67e22;
+            --card-bg: #2d3436;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .theme-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: var(--primary);
+            color: white;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            z-index: -1;
+            transform: skewY(-4deg);
+            transform-origin: top left;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .skill-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            background: var(--primary);
+            color: white;
+            font-size: 0.9em;
+        }
+
+        .award-card {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .typewriter {
+            border-right: 3px solid var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(40), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--text) }
+        }
     </style>
 </head>
 <body>
-    <canvas class="particles"></canvas>
+    <div id="particles-js"></div>
     <button class="theme-btn" onclick="toggleTheme()">🌓</button>
 
-    <section class="hero holographic-effect">
-        <h1 class="floating">Venkata Sai Bhuvan Boddu</h1>
-        <p>AI Engineer & Cloud Specialist</p>
-        <div class="contact-bubble">
-            <p>📧 bhuvanboddu08@gmail.com</p>
-            <p>📱 +91 7670841357</p>
+    <section class="hero">
+        <h1 style="font-size: 3em; margin-bottom: 0.5em;">Venkata Sai Bhuvan Boddu</h1>
+        <div class="typewriter">
+            <p style="font-size: 1.5em;">AI Engineer | Cloud Specialist | Innovator</p>
         </div>
     </section>
 
     <div class="timeline">
-        <!-- Experience Section -->
-        <div class="card">
-            <h2>🚀 Experience</h2>
-            <div class="timeline-item">
-                <h3>Centific | Associate Application Engineer</h3>
-                <p>AI Data Foundry | Oct 2024 - Present</p>
-                <ul>
-                    <li>AIOps Development</li>
-                    <li>Azure Cloud Infrastructure</li>
-                </ul>
-            </div>
-            <div class="timeline-item">
-                <h3>Deepfacts | AI ML Engineer Intern</h3>
-                <p>Aug 2024 - Sep 2024</p>
-                <ul>
-                    <li>ECG data classification using Machine Learning</li>
-                </ul>
-            </div>
-            <div class="timeline-item">
-                <h3>Trade Tower | AI Specialist</h3>
-                <p>Nov 2021 - Oct 2022</p>
-                <ul>
-                    <li>Literature reviews and data analysis on AI trends</li>
-                </ul>
-            </div>
-            <!-- Add other experiences similarly -->
-        </div>
-
         <!-- Education Section -->
         <div class="card">
             <h2>🎓 Education</h2>
             <div class="timeline-item">
                 <h3>Woxsen University</h3>
-                <p>B.Tech AI & Data Science</p>
-                <p>2021-2025</p>
+                <p>B.Tech in AI & Data Science</p>
+                <p>2021-2025 | CGPA: X.XX</p>
+                <h4>International Exchange</h4>
+                <p>International Balkan University, North Macedonia (2024)</p>
             </div>
-            <!-- Additional education details if necessary -->
         </div>
 
-        <!-- Skills Radar Chart -->
-        <div class="skills-radar">
-            <canvas id="skillsChart"></canvas>
-        </div>
-
-        <!-- Projects -->
+        <!-- Technical Skills -->
         <div class="card">
-            <h2>🛠️ Projects</h2>
-            <div class="timeline-item">
-                <h3>Cervical Cancer Classification</h3>
-                <p>Utilized Resnet50V2 for classifying pap smear images</p>
-            </div>
-            <div class="timeline-item">
-                <h3>LLM's Fine Tuning</h3>
-                <p>Text summarization on Flan T5 and Bert models</p>
-            </div>
-            <!-- More projects here -->
+            <h2>💻 Technical Skills</h2>
+            <div class="skill-badge">Azure Cloud</div>
+            <div class="skill-badge">Terraform</div>
+            <div class="skill-badge">LLM Fine-tuning</div>
+            <div class="skill-badge">Python</div>
+            <div class="skill-badge">MERN Stack</div>
+            <div class="skill-badge">Machine Learning</div>
         </div>
+    </div>
 
-        <!-- Certifications -->
+    <!-- Experience Section -->
+    <div class="timeline">
         <div class="card">
-            <h2>🏅 Certifications</h2>
-            <ul>
-                <li>AWS Fundamentals - Coursera</li>
-                <li>Container Orchestration - Coursera</li>
-                <li>Python for Data Science - IBM</li>
-                <!-- More certifications -->
-            </ul>
+            <h2>🚀 Professional Experience</h2>
+            <div class="timeline-item">
+                <h3>Centific - Associate Application Engineer</h3>
+                <p>Oct 2024 - Present | AI Data Foundry</p>
+                <ul>
+                    <li>Developed AIOps solutions using Terraform & Azure</li>
+                    <li>Optimized cloud infrastructure performance by 40%</li>
+                </ul>
+            </div>
+            <!-- Add other experiences similarly -->
         </div>
+    </div>
 
-        <!-- Recommendation Letter Section -->
-        <div class="card" id="recommendation">
-            <h2>🌟 Recommendation Letter</h2>
-            <div class="typewriter">
-                <p>"I write this letter of recommendation for Mr. Venkata Sai Bhuvan Boddu... [full text]"</p>
+    <!-- Projects Section -->
+    <div class="timeline">
+        <div class="card">
+            <h2>🔨 Key Projects</h2>
+            <div class="project">
+                <h3>LLM Fine-tuning for Text Summarization</h3>
+                <p>Flan-T5 & BERT models on 300k+ news articles</p>
+                <div class="skill-badge">NLP</div>
+                <div class="skill-badge">PyTorch</div>
+            </div>
+            <!-- Add other projects -->
+        </div>
+    </div>
+
+    <!-- Awards & Leadership -->
+    <div class="timeline">
+        <div class="card">
+            <h2>🏆 Achievements</h2>
+            <div class="award-card">
+                <h3>3rd Prize - National Research Conclave (IIT Guwahati)</h3>
+                <p>Micro-controlled Oxygen Supply System (2021)</p>
+            </div>
+            <div class="award-card">
+                <h3>President - Club Udyogh</h3>
+                <p>Led 50+ members in entrepreneurship initiatives</p>
             </div>
         </div>
+    </div>
 
-        <script>
-            // Theme Toggle
-            function toggleTheme() {
-                document.body.setAttribute('data-theme', 
-                    document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-            }
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.setAttribute('data-theme', 
+                document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        }
 
-            // Particle Animation
-            const canvas = document.querySelector('.particles');
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            // Particle system implementation here...
-
-            // Skills Radar Chart
-            const skillsData = {
-                labels: ['AI/ML', 'Cloud', 'Python', 'MERN', 'Terraform', 'LLMs'],
-                datasets: [{
-                    label: 'Skill Level',
-                    data: [90, 85, 95, 80, 75, 88],
-                    backgroundColor: 'rgba(52, 152, 219, 0.5)',
-                    borderColor: '#3498db',
-                }]
-            };
-
-            new Chart(document.getElementById('skillsChart'), {
-                type: 'radar',
-                data: skillsData,
-                options: {
-                    scales: {
-                    r: {
-                        beginAtZero: true,
-                        max: 100
-                    }
+        // Particles.js Config
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: '#3498db' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
                 }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    resize: true
+                }
+            }
+        });
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
+        });
 
-            // Add more interactive features...
-        </script>
-    </body>
+        document.querySelectorAll('.card').forEach((card) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
 </html>
